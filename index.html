@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morocco Unlocked | Insider Morocco & MENA Travel</title>
+<meta name="description" content="Morocco Unlocked delivers insider English-language travel guides to Morocco, MENA and wider EMEA — hidden gems, local secrets and authentic experiences beyond the tourist trail.">
+<meta name="keywords" content="Morocco travel, Marrakech, MENA travel, insider Morocco, hidden gems Morocco, authentic Morocco, Morocco travel guide, riads Morocco">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #1A1A1A;
+  --terracotta: #8B3A2A;
+  --gold: #C8963E;
+  --gold-light: #E0AE5A;
+  --teal: #1A5F6E;
+  --white: #FFFFFF;
+  --cream: #F5F0E8;
+  --border: rgba(200,150,62,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--white); font-family: 'Nunito', sans-serif; }
+
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(26,26,26,0.96); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 700; color: var(--gold);
+  letter-spacing: 2px;
+}
+.nav-logo span { color: var(--white); font-weight: 300; font-size: 0.65rem; display: block; letter-spacing: 5px; margin-top: -3px; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; opacity: 0.8; transition: all 0.2s; }
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 6rem 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(139,58,42,0.15) 0%, transparent 60%);
+}
+.star-symbol {
+  font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem;
+  display: block; line-height: 1;
+}
+.hero-tag {
+  font-size: 0.7rem; letter-spacing: 5px; color: var(--gold);
+  border: 1px solid var(--border); padding: 0.4rem 1.2rem;
+  margin-bottom: 2rem; text-transform: uppercase; font-family: 'Nunito', sans-serif;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 700; line-height: 0.95;
+  color: var(--white); margin-bottom: 0.3rem;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-family: 'Nunito', sans-serif; font-weight: 300;
+  font-size: clamp(0.8rem, 2vw, 1rem); letter-spacing: 6px;
+  color: var(--white); opacity: 0.5;
+  margin-bottom: 2rem; text-transform: uppercase;
+}
+.hero-divider {
+  width: 60px; height: 1px; background: var(--terracotta);
+  margin: 0 auto 2rem;
+}
+.hero-desc {
+  max-width: 580px; font-size: 1.05rem; line-height: 1.85;
+  color: var(--white); opacity: 0.7; margin-bottom: 3rem;
+}
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background: var(--gold); color: var(--dark);
+  padding: 0.9rem 2.5rem; font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; transition: all 0.3s; font-family: 'Nunito', sans-serif;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-secondary {
+  border: 1px solid var(--gold); color: var(--gold);
+  padding: 0.9rem 2.5rem; font-weight: 400; font-size: 0.8rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; transition: all 0.3s; font-family: 'Nunito', sans-serif;
+}
+.btn-secondary:hover { background: rgba(200,150,62,0.1); }
+
+/* STRIP */
+.strip {
+  background: var(--terracotta);
+  padding: 1.2rem 2rem; text-align: center;
+  font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase;
+  font-family: 'Nunito', sans-serif; font-weight: 600;
+}
+
+/* DESTINATIONS */
+.destinations { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 0.7rem; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700;
+  margin-bottom: 3rem; line-height: 1.1;
+}
+.dest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.dest-card {
+  border: 1px solid var(--border); padding: 2rem;
+  transition: all 0.3s; position: relative; overflow: hidden;
+  text-decoration: none; color: var(--white); display: block;
+}
+.dest-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.3s;
+}
+.dest-card:hover::after { transform: scaleX(1); }
+.dest-card:hover { border-color: var(--gold); }
+.dest-icon { font-size: 2rem; margin-bottom: 1rem; }
+.dest-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 0.6rem; }
+.dest-card p { font-size: 0.85rem; line-height: 1.7; opacity: 0.65; }
+.dest-tag { font-size: 0.65rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
+
+/* WHY */
+.why {
+  background: rgba(200,150,62,0.04);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 2rem;
+}
+.why-inner { max-width: 1000px; margin: 0 auto; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+.why-point { margin-bottom: 2.5rem; }
+.why-point h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; color: var(--gold); margin-bottom: 0.6rem;
+}
+.why-point p { font-size: 0.9rem; line-height: 1.7; opacity: 0.7; }
+
+/* ABOUT */
+.about { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-text p { font-size: 1rem; line-height: 1.85; opacity: 0.75; margin-bottom: 1.5rem; }
+.creds { display: flex; flex-direction: column; gap: 1.2rem; }
+.cred { border-left: 2px solid var(--terracotta); padding-left: 1.2rem; }
+.cred strong { display: block; font-size: 0.9rem; color: var(--gold-light); margin-bottom: 0.2rem; }
+.cred span { font-size: 0.82rem; opacity: 0.6; line-height: 1.5; }
+
+/* CONTENT */
+.content-section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+.content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.content-card {
+  border: 1px solid var(--border); padding: 2rem;
+  text-decoration: none; color: var(--white); display: block;
+  transition: all 0.3s;
+}
+.content-card:hover { border-color: var(--gold); background: rgba(200,150,62,0.03); }
+.content-label { font-size: 0.65rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+.content-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.7rem; }
+.content-card p { font-size: 0.83rem; opacity: 0.6; line-height: 1.6; }
+.content-arrow { margin-top: 1.5rem; color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; }
+
+/* CONTACT */
+.contact {
+  background: var(--terracotta);
+  padding: 6rem 2rem; text-align: center;
+}
+.contact .section-title { color: var(--white); margin: 0 auto 1rem; }
+.contact p { opacity: 0.85; margin-bottom: 2rem; font-size: 1.05rem; }
+.contact-email {
+  display: inline-block; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; color: var(--white);
+  text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 0.3rem;
+}
+.contact-socials { margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.contact-socials a {
+  border: 1px solid rgba(255,255,255,0.4); color: var(--white);
+  padding: 0.7rem 1.8rem; font-size: 0.8rem; letter-spacing: 2px;
+  text-transform: uppercase; text-decoration: none; transition: all 0.3s;
+}
+.contact-socials a:hover { background: rgba(255,255,255,0.1); }
+
+footer {
+  border-top: 1px solid var(--border); padding: 2rem;
+  text-align: center; font-size: 0.78rem; opacity: 0.4; letter-spacing: 1px;
+}
+.footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.footer-links a { color: var(--white); text-decoration: none; }
+.footer-links a:hover { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .why-grid, .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MOROCCO UNLOCKED<span>INSIDER TRAVEL GUIDES</span></div>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <span class="star-symbol">★</span>
+  <div class="hero-tag">Insider Morocco & MENA Travel</div>
+  <h1>MOROCCO<br><span>UNLOCKED</span></h1>
+  <div class="hero-sub">Hidden Gems · Local Secrets · Real Morocco</div>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">The go-to English-language channel for travellers who want to experience Morocco the way locals do. Insider guides to riads, souks, desert routes and authentic experiences across Morocco, MENA and the wider EMEA region — backed by genuine on-the-ground contacts.</p>
+  <div class="hero-cta">
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="btn-primary">Watch on YouTube</a>
+    <a href="#contact" class="btn-secondary">Partner With Us</a>
+  </div>
+</section>
+
+<div class="strip">Morocco · MENA · Europe · Authentic Travel Intelligence</div>
+
+<section class="destinations" id="destinations">
+  <div class="section-tag">Where We Go</div>
+  <h2 class="section-title">Beyond the Tourist Trail</h2>
+  <div class="dest-grid">
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">Imperial Cities</div>
+      <h3>Marrakech Unlocked</h3>
+      <p>The souks the guidebooks don't show you. Local riad owners, hidden hammams, food tours with actual Marrakchis.</p>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">Desert South</div>
+      <h3>Sahara & the South</h3>
+      <p>Merzouga, the Draa Valley, Aït Benhaddou. How to do the desert properly without the tourist circus.</p>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">Atlantic Coast</div>
+      <h3>Essaouira & the Coast</h3>
+      <p>Morocco's most underrated city. Why sophisticated travellers choose it over Marrakech.</p>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">Northern Morocco</div>
+      <h3>Chefchaouen & the Rif</h3>
+      <p>The blue city beyond the Instagram photo — and the mountain villages even fewer visitors reach.</p>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">MENA & EMEA</div>
+      <h3>Beyond Morocco</h3>
+      <p>Insider guides across the MENA region and wider EMEA — the same authentic approach, different latitudes.</p>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="dest-card">
+      <div class="dest-tag">Practical Guides</div>
+      <h3>How To Do Morocco Right</h3>
+      <p>Visas, transport, money, safety, bargaining — everything first-time visitors get wrong and how to avoid it.</p>
+    </a>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="why-inner">
+    <div class="section-tag">Why Morocco Unlocked</div>
+    <h2 class="section-title">The Difference Is Real Access</h2>
+    <div class="why-grid">
+      <div>
+        <div class="why-point">
+          <h3>Genuine Industry Contacts</h3>
+          <p>Direct relationships with tour operators, DMCs, boutique hotel owners and riads across Morocco — not just travel blogs and TripAdvisor reviews.</p>
+        </div>
+        <div class="why-point">
+          <h3>25+ Years Regional Expertise</h3>
+          <p>Our presenter has spent over two decades working in travel and hospitality across Europe, Morocco and MENA at board level. This is insider knowledge, not tourist knowledge.</p>
+        </div>
+        <div class="why-point">
+          <h3>English-Language Gap</h3>
+          <p>Morocco is one of the world's most visited destinations but has almost no quality English-language insider content. Morocco Unlocked fills that gap entirely.</p>
+        </div>
+      </div>
+      <div>
+        <div class="why-point">
+          <h3>Multilingual Reach</h3>
+          <p>Content produced in English with authentic Arabic, French and Spanish context — reaching the international audience Morocco deserves.</p>
+        </div>
+        <div class="why-point">
+          <h3>EMEA Coverage</h3>
+          <p>Morocco is the anchor, but our scope spans the wider EMEA region — giving advertisers reach across a high-value, high-intent travel audience.</p>
+        </div>
+        <div class="why-point">
+          <h3>Affiliate-Ready Content</h3>
+          <p>Every video is built around a conversion goal — tours, accommodation, transfers and experiences linked to trusted affiliate partners with full disclosure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" id="content">
+  <div class="section-tag">Latest Content</div>
+  <h2 class="section-title">Recent Guides</h2>
+  <div class="content-grid">
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="content-card">
+      <div class="content-label">Morocco Insider</div>
+      <h3>Why Everyone Gets Morocco Wrong (And How To Do It Right)</h3>
+      <p>The most common mistakes first-time Morocco visitors make — and the insider approach that changes everything.</p>
+      <div class="content-arrow">WATCH NOW →</div>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="content-card">
+      <div class="content-label">Marrakech</div>
+      <h3>The Marrakech Locals Don't Want You to Know About</h3>
+      <p>Hidden riads, local restaurants, off-medina neighbourhoods and the Marrakech that exists beyond Jemaa el-Fna.</p>
+      <div class="content-arrow">WATCH NOW →</div>
+    </a>
+    <a href="https://www.youtube.com/@MoroccoUnlocked" class="content-card">
+      <div class="content-label">Desert South</div>
+      <h3>The Perfect 3-Day Sahara Desert Route from Marrakech</h3>
+      <p>How to do the Sahara properly — the DMCs worth using, the camps worth paying for and the ones to avoid.</p>
+      <div class="content-arrow">WATCH NOW →</div>
+    </a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-tag" style="color:rgba(255,255,255,0.7)">Partner With Us</div>
+  <h2 class="section-title">Work With Morocco Unlocked</h2>
+  <p>For brand partnerships, tour operator collaborations, DMC sponsorships, hotel features and affiliate programme enquiries.</p>
+  <a href="mailto:info@3mconsulting.es" class="contact-email">info@3mconsulting.es</a>
+  <div class="contact-socials">
+    <a href="https://www.youtube.com/@MoroccoUnlocked">YouTube</a>
+    <a href="https://www.instagram.com/moroccounlockedtv">Instagram</a>
+    <a href="https://www.tiktok.com/@moroccounlockedtv">TikTok</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="#destinations">Destinations</a>
+    <a href="#about">About</a>
+    <a href="#content">Content</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:info@3mconsulting.es">info@3mconsulting.es</a>
+  </div>
+  © 2026 Morocco Unlocked · A 3M Consulting Production · London, United Kingdom
+</footer>
+
+</body>
+</html>
